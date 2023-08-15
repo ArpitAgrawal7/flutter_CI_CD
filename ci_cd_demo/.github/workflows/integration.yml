@@ -7,18 +7,17 @@ on:
     branches: [ "main" ]
 
 job:
-  build:
-    
+  flutter_test:
+    name: Run flutter test and analyze
     runs-on: ubuntu-latest
-      
       steps:
-      - uses: actions/checkout@v3
-      - uses: action/setup-java@v1
-        with:
-          java-version: "20.x"
-      - uses: subosito/flutter-action@v1
-        with:
-          channel: "stable"
-      - run: flutter pub get
-      - run: flutter analyze
-      - run: flutter test
+        - uses: actions/checkout@v3
+        - uses: action/setup-java@v1
+          with:
+            java-version: "20.x"
+        - uses: subosito/flutter-action@v1
+          with:
+            channel: "stable"
+        - run: flutter pub get
+        - run: flutter analyze
+        - run: flutter test
