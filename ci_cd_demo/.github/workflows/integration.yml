@@ -2,9 +2,11 @@ name: Integration
 
 on:
   push:
-    branch: [ main ]
+    branch: 
+      - main
   pull_request:
-    branch: [ main ]
+    branch:
+      - main
 
 job:
   build:
